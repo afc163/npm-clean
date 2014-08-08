@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-var iterateFiles = require("iterate-files")
-var requires = require('searequire')
-var array = require("array-extended")
+var iterateFiles = require('iterate-files')
+var requires = require('requires')
+var array = require('array-extended')
+var uniq = require('uniq')
 var fs = require('fs')
 var path = require('path')
 var pkgFile = path.join(process.cwd(), 'package.json')
@@ -21,6 +22,8 @@ iterateFiles(process.cwd(), function (fileName) {
     return r.path
   }))
 }, function (err) {
+  console.log(actuallyDeps)
+  actuallyDeps = uniq(actuallyDeps)
   var unused = array.difference(dependencies, actuallyDeps)
   if (unused.length > 0) {
     unused.forEach(function(item) {
@@ -33,4 +36,5 @@ iterateFiles(process.cwd(), function (fileName) {
     })
     fs.writeFileSync(pkgFile, JSON.stringify(pkg, null, 2))
   }
+  process.exit(0)
 })
