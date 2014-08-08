@@ -1,0 +1,30 @@
+{
+  "name": "npm-clean",
+  "version": "1.0.0",
+  "description": "Clean unused dependenices",
+  "preferGlobal": "true",
+  "keywords": [
+    "dependencies",
+    "unused",
+    "clean",
+    "cleanup",
+    "npm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/afc163/npm-clean.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "afc163 <afc163@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "npm-clean": "index.js"
+  },
+  "dependencies": {
+    "array-extended": "0.0.11",
+    "iterate-files": "^0.1.1",
+    "searequire": "^1.5.0"
+  }
+}
