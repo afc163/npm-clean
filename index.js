@@ -24,12 +24,14 @@ iterateFiles(process.cwd(), function (fileName) {
 }, function (err) {
   actuallyDeps = uniq(actuallyDeps)
   var unused = array.difference(dependencies, actuallyDeps)
+  unused = unused.filter(function(item) {
+    // no remove grunt and gulp plugins
+    if (item.indexOf('grunt-') < 0 && item.indexOf('gulp-') < 0) {
+      return item
+    }
+  })
   if (unused.length > 0) {
     unused.forEach(function(item) {
-      // no remove grunt and gulp plugins
-      if (item.indexOf('grunt-') >= 0 || item.indexOf('gulp-') >= 0) {
-        return
-      }
       console.log('Clean unused dependency: ' + item)
       delete pkg.dependencies[item]
     })
