@@ -22,7 +22,6 @@ iterateFiles(process.cwd(), function (fileName) {
     return r.path
   }))
 }, function (err) {
-  console.log(actuallyDeps)
   actuallyDeps = uniq(actuallyDeps)
   var unused = array.difference(dependencies, actuallyDeps)
   if (unused.length > 0) {
