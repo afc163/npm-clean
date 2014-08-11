@@ -1,7 +1,7 @@
 {
   "name": "npm-clean",
   "version": "1.0.1",
-  "description": "Clean unused dependenices",
+  "description": "Clean unused dependenices in package.json",
   "preferGlobal": "true",
   "keywords": [
     "dependencies",

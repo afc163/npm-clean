@@ -1,6 +1,6 @@
 # npm-clean [![NPM version](https://img.shields.io/npm/v/npm-clean.svg?style=flat)](https://npmjs.org/package/npm-clean)
 
-Clean unused dependenices.
+Clean unused dependenices in package.json.
 
 ---
 
